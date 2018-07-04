@@ -4,6 +4,8 @@ const child_process = require('child_process');
 var install = require('install-if-needed');
 var fs = require('fs');
 
+app.get('/', (req, res) => res.send('HOMEPAGE NOT CONFIGURED'));
+
 app.get('/:href(*)', (req, res) => {
   req.params[0] = req.params[0].replace(/\./g, '');
   fs.readFile(
